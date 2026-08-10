@@ -6,7 +6,7 @@
 #    By: bsampaio <bsampaio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/07 14:53:43 by bsampaio          #+#    #+#              #
-#    Updated: 2026/08/07 14:59:04 by bsampaio         ###   ########.fr        #
+#    Updated: 2026/08/10 12:39:02 by bsampaio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ all: $(NAME)
 $(OBJS): $(HEADER)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) - $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)
