@@ -6,14 +6,27 @@
 /*   By: bsampaio <bsampaio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 14:55:05 by bsampaio          #+#    #+#             */
-/*   Updated: 2026/08/07 16:02:56 by bsampaio         ###   ########.fr       */
+/*   Updated: 2026/08/10 11:12:01 by bsampaio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(int grade): grade(grade)
+Bureaucrat::Bureaucrat(): grade(1), name("Default")
 {}
+Bureaucrat::Bureaucrat(int grade): grade(grade), name("Bureaucrat")
+{}
+
+Bureaucrat::Bureaucrat(const Bureaucrat& obj): name(obj.getName()), grade(obj.getGrade()) 
+{}
+
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& obj)
+{
+    if (this != &obj)
+        this->grade = obj.getGrade();
+    return *this;
+}
+
 Bureaucrat::~Bureaucrat()
 {}
 
@@ -35,7 +48,7 @@ const std::string& Bureaucrat::getName() const
 }
 
 
-int Bureaucrat::getGrate() const
+int Bureaucrat::getGrade() const
 {
     return this->grade;
 }
