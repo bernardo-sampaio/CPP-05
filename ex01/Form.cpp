@@ -6,24 +6,30 @@
 /*   By: bsampaio <bsampaio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 14:53:21 by bsampaio          #+#    #+#             */
-/*   Updated: 2026/08/12 10:25:21 by bsampaio         ###   ########.fr       */
+/*   Updated: 2026/08/12 12:29:13 by bsampaio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(): gradeToExecute(1), gradeToSign(1), name("Bureaucrat")
+Form::Form(): name("Bureaucrat"), gradeToSign(1), gradeToExecute(1)
 {
     this->isSigned = false;
 }
     
 
-Form::Form(std::string name, int gradeToSign, int gradeToExecute):gradeToSign(gradeToSign),gradeToExecute(gradeToExecute), name("Bureaucrat")
+Form::Form(std::string name, int gradeToSign, int gradeToExecute): name(name), 
+gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
 {
+    if (gradeToSign < 1 || gradeToExecute < 1)
+        throw GradeTooHighException();
+    if (gradeToSign > 150 || gradeToExecute > 150)
+        throw GradeTooLowException();
     this->isSigned = false;
 }
 
-Form::Form(const Form& obj): gradeToSign(obj.gradeToSign),gradeToExecute(obj.gradeToExecute), name(obj.name)
+Form::Form(const Form& obj):  name(obj.name), 
+gradeToSign(obj.gradeToSign), gradeToExecute(obj.gradeToExecute)
 {
     this->isSigned = obj.isSigned;
 }
@@ -60,6 +66,14 @@ int Form::getGradeToExecute(void) const
     return this->gradeToExecute;
 }
 
+std::ostream& operator<<(std::ostream& o, const Form& obj)
+{
+    o <<"Name form: "<<obj.getName()
+    <<"\nGrade to sign: "<<obj.getGradeToSign()
+    <<"\nGrade to execute: "<<obj.getGradeToExecute()
+    <<"\nsigned: "<<obj.getIsSigned()<<std::endl;
+    return o;
+}
 
 void Form::beSigned(Bureaucrat& bur)
 {
@@ -69,8 +83,12 @@ void Form::beSigned(Bureaucrat& bur)
         throw GradeTooLowException();
 }
 
-std::ostream& operator<<(std::ostream& o, const Form& obj)
+const char* Form::GradeTooHighException::what() const throw()
 {
-    o << obj.getName()<<obj.getGradeToSign()<<obj.getGradeToExecute()<<obj.getIsSigned;
-    return o;
+    return "Form grade is too high.";   
+}
+
+const char* Form::GradeTooLowException::what() const throw()
+{
+    return "Form grade is too low.";
 }

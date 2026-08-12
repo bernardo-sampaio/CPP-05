@@ -6,7 +6,7 @@
 /*   By: bsampaio <bsampaio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 14:55:27 by bsampaio          #+#    #+#             */
-/*   Updated: 2026/08/10 14:50:41 by bsampaio         ###   ########.fr       */
+/*   Updated: 2026/08/12 13:02:19 by bsampaio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,62 +14,17 @@
 
 int main()
 {
-    
-    std::cout<<"===================TooHighGrade Test===================\n\n";
     try
     {
-        Bureaucrat bur("Sampaio", 1);
-        std::cout<<bur<<std::endl;
-        bur.incrementGrade();
+        Bureaucrat bur("Bernardo", 1);
+        Form form("B28", 150, 2);
+        
+        std::cout<<form<<std::endl;
+        bur.signForm(form);
     }
-    catch(std::exception& e)
+    catch(const std::exception& e)
     {
-        std::cout<<e.what();
-    }
-    
-    std::cout<<"\n\n===================TooLowGrade Test===================\n\n";
-    try
-    {
-        Bureaucrat bur("Germano", 150);
-        std::cout<<bur<<std::endl;
-        bur.decrementGrade();
-    }
-    catch(std::exception& e)
-    {
-        std::cout<<e.what();
-    }
-    
-    std::cout<<"\n\n===================Normal Test===================\n\n";
-    try
-    {
-        Bureaucrat bur("Bernardo", 75);
-        std::cout<<bur<<std::endl;
-    }
-    catch(std::exception& e)
-    {
-        std::cout<<e.what();
-    }
-
-    std::cout<<"\n\n===================TooLowGrade Instance Test===================\n\n";
-    try
-    {
-        Bureaucrat bur("Bernardo", 152);
-        std::cout<<bur<<std::endl;
-    }
-    catch(std::exception& e)
-    {
-        std::cout<<e.what();
-    }
-
-    std::cout<<"\n\n===================TooHighGrade Instance Test===================\n\n";
-    try
-    {
-        Bureaucrat bur("Bernardo", 0);
-        std::cout<<bur<<std::endl;
-    }
-    catch(std::exception& e)
-    {
-        std::cout<<e.what();
+        std::cerr << e.what() << '\n';
     }
     return 0;
 }

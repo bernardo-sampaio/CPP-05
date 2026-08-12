@@ -6,7 +6,7 @@
 /*   By: bsampaio <bsampaio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 14:55:05 by bsampaio          #+#    #+#             */
-/*   Updated: 2026/08/10 13:29:39 by bsampaio         ###   ########.fr       */
+/*   Updated: 2026/08/12 12:54:55 by bsampaio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,18 @@ void Bureaucrat::decrementGrade(void)
     if(this->grade == 150)
         throw GradeTooLowException();
     this->grade++;
+}
+
+void Bureaucrat::signForm(Form& form)
+{
+    try
+    {
+        form.beSigned(*this);
+        std::cout<<this->name<<" signed "<<form.getName()<<std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout<<this->name<<" couldn't to sign "<<form.getName()<<" because "<<e.what()<<std::endl;
+    }
+    
 }
