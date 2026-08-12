@@ -6,7 +6,7 @@
 /*   By: bsampaio <bsampaio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 14:53:21 by bsampaio          #+#    #+#             */
-/*   Updated: 2026/08/10 16:20:47 by bsampaio         ###   ########.fr       */
+/*   Updated: 2026/08/12 10:25:21 by bsampaio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,22 +41,25 @@ Form::~Form()
 
 const std::string& Form::getName(void) const
 {
-    return this->name;   
-}
-
-int Form::getGradeToSign(void) const
-{
-    return this->gradeToSign;
-}
-int Form::getGradeToExecute(void) const
-{
-    return this->gradeToExecute;
+    return this->name;
 }
 
 bool Form::getIsSigned()const
 {
     return this->isSigned;
 }
+
+int Form::getGradeToSign(void) const
+{
+    return this->gradeToSign;
+}
+
+
+int Form::getGradeToExecute(void) const
+{
+    return this->gradeToExecute;
+}
+
 
 void Form::beSigned(Bureaucrat& bur)
 {
