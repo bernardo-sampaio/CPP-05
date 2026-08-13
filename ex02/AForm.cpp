@@ -6,7 +6,7 @@
 /*   By: bsampaio <bsampaio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 14:53:21 by bsampaio          #+#    #+#             */
-/*   Updated: 2026/08/12 15:07:29 by bsampaio         ###   ########.fr       */
+/*   Updated: 2026/08/13 14:38:55 by bsampaio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,3 +92,16 @@ const char* AForm::GradeTooLowException::what() const throw()
 {
     return "AForm grade is too low.";
 }
+
+const char* AForm::NotSignedException::what() const throw()
+{
+    return "Form is not signed.";   
+}
+ void AForm::execute(Bureaucrat const & executor) const 
+ {
+    if (!isSigned)
+        throw NotSignedException();
+    if (executor.getGrade() > gradeToExecute)
+        throw GradeTooLowException();
+    this->executeAction();
+ }

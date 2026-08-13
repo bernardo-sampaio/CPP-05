@@ -6,7 +6,7 @@
 /*   By: bsampaio <bsampaio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 14:55:05 by bsampaio          #+#    #+#             */
-/*   Updated: 2026/08/12 15:07:56 by bsampaio         ###   ########.fr       */
+/*   Updated: 2026/08/13 14:57:49 by bsampaio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,16 @@ void Bureaucrat::signForm(AForm& form)
         std::cout<<this->name<<" couldn't to sign "<<form.getName()<<" because "<<e.what()<<std::endl;
     }
     
+}
+void Bureaucrat::executeForm(AForm& form)
+{
+    try
+    {
+        form.execute(*this);
+        std::cout<< this->getName()<<" executed "<<form.getName()<<std::endl;
+    }
+    catch(std::exception& e)
+    {
+        std::cout<<this->getName()<<" couldn't execute "<<form.getName()<<" because "<<e.what()<<std::endl;   
+    }
 }

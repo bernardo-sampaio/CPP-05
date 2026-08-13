@@ -6,7 +6,7 @@
 /*   By: bsampaio <bsampaio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 15:12:30 by bsampaio          #+#    #+#             */
-/*   Updated: 2026/08/12 15:26:52 by bsampaio         ###   ########.fr       */
+/*   Updated: 2026/08/13 14:43:17 by bsampaio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,19 @@
 class ShrubberyCreationForm: public AForm
 {
     private:
-        const int gradeToSign;
-        const int gradeToExecute;
+        std::string _target;
     public:
         ShrubberyCreationForm();
+        ShrubberyCreationForm(std::string target);
         ShrubberyCreationForm(const ShrubberyCreationForm& obj);
         ShrubberyCreationForm& operator=(const ShrubberyCreationForm& obj);
         ~ShrubberyCreationForm();
+        void executeAction() const;
+        class FileCreationException: public std::exception
+        {
+            public:
+                virtual const char* what() const throw();  
+        };
         
 };
 
