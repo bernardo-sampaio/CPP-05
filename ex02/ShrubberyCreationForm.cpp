@@ -6,11 +6,14 @@
 /*   By: bsampaio <bsampaio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 15:12:30 by bsampaio          #+#    #+#             */
-/*   Updated: 2026/08/13 15:25:05 by bsampaio         ###   ########.fr       */
+/*   Updated: 2026/08/13 15:39:16 by bsampaio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+
+ShrubberyCreationForm::ShrubberyCreationForm(): AForm("Shrubbery", 145, 137), _target("Default")
+{}
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm("Shrubbery", 145, 137), _target(target)
 {}
