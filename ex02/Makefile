@@ -6,16 +6,16 @@
 #    By: bsampaio <bsampaio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/07 14:53:43 by bsampaio          #+#    #+#              #
-#    Updated: 2026/08/13 15:10:25 by bsampaio         ###   ########.fr        #
+#    Updated: 2026/08/13 16:06:18 by bsampaio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = Bureaucrat
-SRCS = Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp main.cpp
+SRCS = Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o) 
-HEADER = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.cpp
+HEADER = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp
 
 all: $(NAME)
 

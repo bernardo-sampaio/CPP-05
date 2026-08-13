@@ -6,7 +6,7 @@
 /*   By: bsampaio <bsampaio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 15:12:30 by bsampaio          #+#    #+#             */
-/*   Updated: 2026/08/13 14:43:17 by bsampaio         ###   ########.fr       */
+/*   Updated: 2026/08/13 15:57:19 by bsampaio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class ShrubberyCreationForm: public AForm
             public:
                 virtual const char* what() const throw();  
         };
-        
 };
 
 #endif
