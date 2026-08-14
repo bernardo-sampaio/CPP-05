@@ -6,7 +6,7 @@
 /*   By: bsampaio <bsampaio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 14:53:29 by bsampaio          #+#    #+#             */
-/*   Updated: 2026/08/13 14:29:36 by bsampaio         ###   ########.fr       */
+/*   Updated: 2026/08/14 11:15:45 by bsampaio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class AForm
         AForm(std::string name, const int gradeToSign, const int gradeToExecute);
         AForm(const AForm& obj);
         AForm& operator=(const AForm& obj);
-        ~AForm();
+        virtual ~AForm();
         class GradeTooLowException: public std::exception
         {
             public:
