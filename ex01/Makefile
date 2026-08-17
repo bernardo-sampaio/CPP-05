@@ -6,12 +6,12 @@
 #    By: bsampaio <bsampaio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/07 14:53:43 by bsampaio          #+#    #+#              #
-#    Updated: 2026/08/12 12:37:42 by bsampaio         ###   ########.fr        #
+#    Updated: 2026/08/17 13:45:44 by bsampaio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = Bureaucrat
 SRCS = Bureaucrat.cpp Form.cpp main.cpp 
 OBJS = $(SRCS:.cpp=.o) 

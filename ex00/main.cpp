@@ -6,7 +6,7 @@
 /*   By: bsampaio <bsampaio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 14:55:27 by bsampaio          #+#    #+#             */
-/*   Updated: 2026/08/10 14:50:41 by bsampaio         ###   ########.fr       */
+/*   Updated: 2026/08/17 12:21:22 by bsampaio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
     }
     catch(std::exception& e)
     {
-        std::cout<<e.what();
+        std::cerr<<e.what();
     }
     
     std::cout<<"\n\n===================TooLowGrade Test===================\n\n";
@@ -36,7 +36,7 @@ int main()
     }
     catch(std::exception& e)
     {
-        std::cout<<e.what();
+        std::cerr<<e.what();
     }
     
     std::cout<<"\n\n===================Normal Test===================\n\n";
@@ -47,7 +47,7 @@ int main()
     }
     catch(std::exception& e)
     {
-        std::cout<<e.what();
+        std::cerr<<e.what();
     }
 
     std::cout<<"\n\n===================TooLowGrade Instance Test===================\n\n";
@@ -58,7 +58,7 @@ int main()
     }
     catch(std::exception& e)
     {
-        std::cout<<e.what();
+        std::cerr<<e.what();
     }
 
     std::cout<<"\n\n===================TooHighGrade Instance Test===================\n\n";
@@ -69,7 +69,7 @@ int main()
     }
     catch(std::exception& e)
     {
-        std::cout<<e.what();
+        std::cerr<<e.what();
     }
     return 0;
 }

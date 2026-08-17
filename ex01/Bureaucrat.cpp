@@ -6,7 +6,7 @@
 /*   By: bsampaio <bsampaio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 14:55:05 by bsampaio          #+#    #+#             */
-/*   Updated: 2026/08/12 12:54:55 by bsampaio         ###   ########.fr       */
+/*   Updated: 2026/08/17 12:18:52 by bsampaio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,4 @@ void Bureaucrat::signForm(Form& form)
     {
         std::cout<<this->name<<" couldn't to sign "<<form.getName()<<" because "<<e.what()<<std::endl;
     }
-    
 }
